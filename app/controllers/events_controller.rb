@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: %i[show update destroy]
+  before_action :set_user, only: %i[show update destroy]
 
   # GET /events
   def index
@@ -45,8 +45,12 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def set_user
+    @user = User.find(params[:user_id])  # Assuming the user ID is passed in the URL
+  end
+
   # Only allow a list of trusted parameters through.
   def event_params
-    params.require(:event).permit(:name, :description, :date, :location)
+    params.require(:event).permit(:name, :description, :date, :user_id)
   end
 end
