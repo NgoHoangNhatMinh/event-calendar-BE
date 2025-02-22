@@ -7,3 +7,15 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# This file ensures the existence of records required to run the application in every environment.
+
+Event.destroy_all
+20.times do
+  Event.create!(
+    name: Faker::Lorem.sentence(word_count: 3),
+    description: Faker::Lorem.paragraph(sentence_count: 15),
+    created_at: rand(2.years).seconds.ago # Randomly create a date
+  )
+end
+

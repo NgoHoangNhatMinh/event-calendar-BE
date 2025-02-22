@@ -9,8 +9,8 @@ default: &default
   host: <%= ENV['PGHOST'] %>
 
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
+  <<: *default
+  database: event-calendar-development
 
 test:
   <<: *default
