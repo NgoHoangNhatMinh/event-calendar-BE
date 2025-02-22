@@ -1,24 +1,5 @@
-# README
+# Documentation
+* API_URL = https://pacific-anchorage-13505-b1b03e99d4da.herokuapp.com
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Fetch all events: GET request to `{API_URL}/events`
+* Create event: POST request to `{API_URL}/events`
