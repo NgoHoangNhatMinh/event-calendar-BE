@@ -3,3 +3,11 @@
 
 * Fetch all events: GET request to `{API_URL}/events`
 * Create event: POST request to `{API_URL}/events`
+* json format: 
+{
+    "event": {
+        "name": <Event Name>,
+        "description": <Event Description>,
+        "time": <Event Time>
+    }
+}
