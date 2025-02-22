@@ -13,7 +13,8 @@
 Event.destroy_all
 20.times do
   Event.create!(
-    name: Faker::Lorem.sentence(word_count: 3),
+    title: Faker::Lorem.sentence(word_count: 3),
+    author: Faker::Lorem.sentence(word_count: 1),
     description: Faker::Lorem.paragraph(sentence_count: 15),
     created_at: rand(2.years).seconds.ago # Randomly create a date
   )
