@@ -10,12 +10,21 @@
 
 # This file ensures the existence of records required to run the application in every environment.
 
+User.destroy_all
+10.times do |i|
+  User.create!(
+    username: Faker::Lorem.sentence(word_count: 1),
+    id: i + 1
+  )
+end
+
 Event.destroy_all
-20.times do
+20.times do |i|
   Event.create!(
     title: Faker::Lorem.sentence(word_count: 3),
     author: Faker::Lorem.sentence(word_count: 1),
     description: Faker::Lorem.paragraph(sentence_count: 15),
+    user_id: i % 10 + 1,
     created_at: rand(2.years).seconds.ago # Randomly create a date
   )
 end
