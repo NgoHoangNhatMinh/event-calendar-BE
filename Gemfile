@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+ruby '3.3.5' # or a newer stable version
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
@@ -63,4 +64,8 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+end
+
+group :production do 
+  gem 'pg'
 end
