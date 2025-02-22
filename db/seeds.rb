@@ -19,13 +19,14 @@ User.destroy_all
 end
 
 Event.destroy_all
-20.times do |i|
+60.times do |i|
   Event.create!(
     title: Faker::Lorem.sentence(word_count: 3),
     author: Faker::Lorem.sentence(word_count: 1),
     description: Faker::Lorem.paragraph(sentence_count: 15),
+    time: rand(2.years).seconds.ago,
     user_id: i % 10 + 1,
-    created_at: rand(2.years).seconds.ago # Randomly create a date
+    created_at: rand(1.months).seconds.ago # Randomly create a date
   )
 end
 
