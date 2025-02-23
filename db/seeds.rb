@@ -33,3 +33,11 @@ Event.destroy_all
   )
 end
 
+Category.destroy_all
+categories.each_with_index do |n, i|
+  Category.create!(
+    name: n,
+    id: i + 1,
+  )
+end
+
