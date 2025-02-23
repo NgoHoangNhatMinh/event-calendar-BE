@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :users
+  resources :events
+
   get "/users/:id/events", controller: "users", action: :show_events
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -15,5 +17,4 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  resources :events
 end
